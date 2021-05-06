@@ -18,13 +18,13 @@ var randomGeneratedNumbers = [];
 //pusho i numeri finchè non diventano 5
 
 while (randomGeneratedNumbers.length < 5) {
-    randomGeneratedNumbers.push(getRandomNumber(1, 10))
+    randomGeneratedNumbers.push(getRandomNumber(1, 10000))
 }
 console.log(randomGeneratedNumbers);
 
 //espongo i numeri pushati nell'array tramite alert
 
-alert(randomGeneratedNumbers);
+alert("Questi sono i numeri del pc: " + randomGeneratedNumbers);
 
 /* Da li parte un timer di 30 secondi. */
 /* Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt(). */
@@ -35,28 +35,32 @@ var insertedNumbersList = [];
 var pcIndex;
 var myIndex;
 
+//la funzione fa partire la richiesta di inserire un numero dopo 30 secondi
 setTimeout(function () {
-    //la funzione fa partire la richiesta di inserire un numero dopo 30 secondi
     for (var i = 0; i < 5; i++) {
         var insertNumber = Number(prompt("Inserisci un numero"));
         //i numeri vengono inseriti nella lista di numeri inseriti dall'utente
         insertedNumbersList.push(insertNumber)
+    } console.log(insertedNumbersList);
+    //paragono la lista di numeri utente e la lista di numeri randomici
+    var winner = false;
+    for (j = 0; j < 5; j++) {
+        console.log('array_utente ' + 'j: ' + insertedNumbersList[j]);
+        console.log('array_random ' + 'j: ' + randomGeneratedNumbers[j]);
+        /* Dopo che sono stati inseriti i 5 numeri, 
+        il software dice quanti e quali dei numeri da indovinare sono stati individuati. */
+     if (insertedNumbersList[j] === randomGeneratedNumbers[j]) {
+        winner = true;
+    } else {
+        winner = false
+    }}
+    if (winner == true) {
+        alert("Complimenti! Hai vinto! I tuoi numeri: " + insertedNumbersList + "I numeri del pc: " + randomGeneratedNumbers);
+    } else {
+        alert("Peccato! Hai perso! I tuoi numeri: " + insertedNumbersList + "I numeri del pc: " + randomGeneratedNumbers);
     }
-    console.log(insertedNumbersList);
-
-    for (j = 0; j < randomGeneratedNumbers.lenght; j++) {
-    var pcIndex = randomGeneratedNumbers[j]
-}
-    console.log(pcIndex);
-
-    for (y = 0; y < insertedNumbersList.length; y++){
-    var myIndex = insertedNumbersList[i]
-}
-    console.log(myIndex);
-
-}, 5000)
+}, 4000)
 /* Dopo che sono stati inseriti i 5 numeri, 
 il software dice quanti e quali dei numeri da indovinare sono stati individuati. */
 //paragono i 2 array creati precedentemente creando un loop per vedere il loro indice
-
 
