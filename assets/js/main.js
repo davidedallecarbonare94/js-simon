@@ -59,7 +59,7 @@ setTimeout(function () {
     } else {
         alert("Peccato! Hai perso! I tuoi numeri: " + insertedNumbersList + "I numeri del pc: " + randomGeneratedNumbers);
     }
-}, 4000)
+}, 30000)
 /* Dopo che sono stati inseriti i 5 numeri, 
 il software dice quanti e quali dei numeri da indovinare sono stati individuati. */
 //paragono i 2 array creati precedentemente creando un loop per vedere il loro indice
